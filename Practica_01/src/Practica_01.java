@@ -1,7 +1,10 @@
 import java.io.*;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Practica_01 {
+
+    private static final String ARCHIVO = "notas.txt";
 
     public static void ejecutar() {
         Scanner scanner = new Scanner(System.in);
@@ -35,7 +38,7 @@ public class Practica_01 {
                         break;
 
                     case 4:
-                        System.out.println("¡Bye bye!");
+                        System.out.println("¡Hasta luego!");
                         break;
 
                     default:
@@ -52,102 +55,98 @@ public class Practica_01 {
         scanner.close();
     }
 
-
     private static void agregarNota(Scanner scanner) {
         System.out.print("Escribe tu nota: ");
-        String nota = scanner.nextLine();
 
         try {
+            double nota = Double.parseDouble(scanner.nextLine());
+
             guardarNota(nota);
+
             System.out.println("Nota guardada.");
-        } catch (IOException e) {
-            System.out.println("Error: " + e.getMessage());
+
+        } catch (NumberFormatException e) {
+            throw new RuntimeException(e);
+
+        } catch (IOException | ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
     }
-
 
     private static void verNotas() {
-        String notas = "";
-
         try {
-            notas = leerNotas();
-        } catch (IOException e) {
+            ArrayList<Double> notas = leerNotas();
+
+            if (notas.isEmpty()) {
+                System.out.println("No hay notas registradas.");
+                return;
+            }
+
+            System.out.println("\n--- Notas registradas ---");
+
+            for (double nota : notas) {
+                System.out.println(nota);
+            }
+
+        } catch (IOException | ClassNotFoundException e) {
             System.out.println("Error: " + e.getMessage());
         }
-
-        System.out.println(notas);
     }
-
 
     private static double calcularPromedio() {
         try {
-            String notas = leerNotas();
+            ArrayList<Double> notas = leerNotas();
 
-            if (notas.trim().isEmpty()) {
+            if (notas.isEmpty()) {
                 System.out.println("No hay notas registradas.");
                 return 0;
             }
-
-            String[] lineas = notas.split("\\R");
 
             double suma = 0;
-            int totalNotas = 0;
 
-            for (String linea : lineas) {
-                if (!linea.trim().isEmpty()) {
-                    double nota = Double.parseDouble(linea.trim());
-                    suma += nota;
-                    totalNotas++;
-                }
+            for (double nota : notas) {
+                suma += nota;
             }
 
-            if (totalNotas == 0) {
-                System.out.println("No hay notas registradas.");
-                return 0;
-            }
+            return suma / notas.size();
 
-            return suma / totalNotas;
-
-        } catch (IOException e) {
-            System.out.println("Error: " + e.getMessage());
-            return 0;
-
-        } catch (NumberFormatException e) {
-            System.out.println("Error: " + e.getMessage());
-            return 0;
+        } catch (IOException | ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
     }
 
+    private static void guardarNota(double nota)
+            throws IOException, ClassNotFoundException {
 
-    private static void guardarNota(String nota) throws IOException {
-        FileWriter archivo = new FileWriter("notas.txt", true);
-        BufferedWriter escritor = new BufferedWriter(archivo);
+        ArrayList<Double> notas = leerNotas();
 
-        escritor.write(nota);
-        escritor.newLine();
+        notas.add(nota);
+
+        ObjectOutputStream escritor =
+                new ObjectOutputStream(new FileOutputStream(ARCHIVO));
+
+        escritor.writeObject(notas);
 
         escritor.close();
     }
 
+    private static ArrayList<Double> leerNotas()
+            throws IOException, ClassNotFoundException {
 
-    private static String leerNotas() throws IOException {
-        File archivo = new File("notas.txt");
+        File archivo = new File(ARCHIVO);
 
-        if (!archivo.exists()) {
-            return "";
+        if (!archivo.exists() || archivo.length() == 0) {
+            return new ArrayList<>();
         }
 
-        BufferedReader lector = new BufferedReader(new FileReader(archivo));
+        ObjectInputStream lector =
+                new ObjectInputStream(new FileInputStream(archivo));
 
-        StringBuilder notas = new StringBuilder();
-        String linea;
-
-        while ((linea = lector.readLine()) != null) {
-            notas.append(linea).append("\n");
-        }
+        ArrayList<Double> notas =
+                (ArrayList<Double>) lector.readObject();
 
         lector.close();
 
-        return notas.toString();
+        return notas;
     }
 }
