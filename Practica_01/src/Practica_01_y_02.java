@@ -1,10 +1,13 @@
 import java.io.*;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.Map;
 import java.util.Scanner;
 
-public class Practica_01 {
+public class Practica_01_y_02 {
 
     private static final String ARCHIVO = "notas.txt";
+    private static final String ARCHIVO_ASISTENCIA = "asistencia.txt";
 
     public static void ejecutar() {
         Scanner scanner = new Scanner(System.in);
@@ -17,7 +20,9 @@ public class Practica_01 {
             System.out.println("1. Agregar nota");
             System.out.println("2. Ver todas las notas");
             System.out.println("3. Calcular promedio");
-            System.out.println("4. Salir");
+            System.out.println("4. Agregar alumno/asistencia");
+            System.out.println("5. Ver alumnos y asistencias");
+            System.out.println("6. Salir");
             System.out.print("Elige una opción: ");
 
             try {
@@ -34,15 +39,23 @@ public class Practica_01 {
 
                     case 3:
                         double promedio = calcularPromedio();
-                        System.out.println("Promedio: " + promedio);
+                        System.out.println("\nPromedio: " + promedio);
                         break;
 
                     case 4:
+                        agregarAlumnoAsitencia(scanner);
+                        break;
+
+                    case 5:
+                        verVerAlumno();
+                        break;
+
+                    case 6:
                         System.out.println("¡Hasta luego!");
                         break;
 
                     default:
-                        System.out.println("Opción inválida. Intenta de nuevo.");
+                        System.out.println("Opción inválida.");
                 }
 
             } catch (NumberFormatException e) {
@@ -50,13 +63,13 @@ public class Practica_01 {
                 opcion = 0;
             }
 
-        } while (opcion != 4);
+        } while (opcion != 6);
 
         scanner.close();
     }
 
     private static void agregarNota(Scanner scanner) {
-        System.out.print("Escribe tu nota: ");
+        System.out.print("\nEscribe tu nota: ");
 
         try {
             double nota = Double.parseDouble(scanner.nextLine());
@@ -148,5 +161,107 @@ public class Practica_01 {
         lector.close();
 
         return notas;
+    }
+
+    private static void agregarAlumnoAsitencia(Scanner scanner) {
+
+        System.out.println("\n--- Coloque el nombre del alumno para poner asistencia ---");
+        System.out.print("Nombre del alumno: ");
+        String nombre = scanner.nextLine();
+
+        try {
+
+            LinkedHashMap<String, Integer> alumnos =
+                    leerAsistencias();
+
+            if (alumnos.containsKey(nombre)) {
+
+                int asistencias = alumnos.get(nombre);
+
+                alumnos.put(nombre, asistencias + 1);
+
+            } else {
+
+                alumnos.put(nombre, 1);
+            }
+
+            guardarAsistencias(alumnos);
+
+            System.out.println("Asistencia guardada.");
+
+        } catch (IOException | ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
+    private static void verVerAlumno() {
+
+        try {
+
+            LinkedHashMap<String, Integer> alumnos =
+                    leerAsistencias();
+
+            if (alumnos.isEmpty()) {
+
+                System.out.println("No hay alumnos registrados.");
+                return;
+            }
+
+            int totalAsistencias = 0;
+
+            System.out.println("\n--- Lista de alumnos ---");
+
+            for (Map.Entry<String, Integer> TotalAsisteciaalumno :
+                    alumnos.entrySet()) {
+
+                System.out.println(
+                        TotalAsisteciaalumno.getKey()
+                                + " - Total Asistencias: "
+                                + TotalAsisteciaalumno.getValue()
+                );
+            }
+
+
+        } catch (IOException | ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
+    private static void guardarAsistencias(
+            LinkedHashMap<String, Integer> alumnos)
+            throws IOException {
+
+        ObjectOutputStream escritor =
+                new ObjectOutputStream(
+                        new FileOutputStream(ARCHIVO_ASISTENCIA));
+
+        escritor.writeObject(alumnos);
+
+        escritor.close();
+    }
+
+
+    private static LinkedHashMap<String, Integer> leerAsistencias()
+            throws IOException, ClassNotFoundException {
+
+        File archivo = new File(ARCHIVO_ASISTENCIA);
+
+        if (!archivo.exists() || archivo.length() == 0) {
+
+            return new LinkedHashMap<>();
+        }
+
+        ObjectInputStream lector =
+                new ObjectInputStream(
+                        new FileInputStream(archivo));
+
+        LinkedHashMap<String, Integer> alumnos =
+                (LinkedHashMap<String, Integer>) lector.readObject();
+
+        lector.close();
+
+        return alumnos;
     }
 }
