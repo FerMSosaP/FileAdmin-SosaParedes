@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b3ab04b4-ac15-4614-acd0-21b475d895cb" name="Changes" comment="Practica02">
+      <change beforePath="$PROJECT_DIR$/../Act_01/El Jeloudas.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Act_01/El Jeloudas.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Act_01/out/production/Act_01/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Act_01/out/production/Act_01/Main.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;FerMSosaP&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/FerMSosaP/FileAdmin-SosaParedes.git&quot;,
+    &quot;accountId&quot;: &quot;3dca3bed-768b-4d7c-a4c1-f4ed489b7364&quot;
+  }
+}</component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0000356929829117" />
+      <entry key="S2" value="1.0772939872207377" />
+      <entry key="S5" value="1.3591354568391876" />
+      <entry key="S10" value="1.5992792161947484" />
+      <entry key="S30" value="1.8528384332346497" />
+      <entry key="S60" value="2.0987920657939885" />
+      <entry key="M2" value="2.847592836138213" />
+      <entry key="M5" value="4.8940129691366465" />
+      <entry key="M10" value="7.381122829006639" />
+      <entry key="M15" value="9.528692280704629" />
+      <entry key="M30" value="14.39851038053113" />
+      <entry key="H1" value="19.365406298920355" />
+      <entry key="H2" value="23.070565400753043" />
+      <entry key="H4" value="25.35705321162511" />
+      <entry key="D1" value="27.532258254117128" />
+      <entry key="W1" value="27.932477088141635" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="6.635118875293705E-193" />
+      <entry key="S5" value="1.3450545052482753E-77" />
+      <entry key="S10" value="3.671017526650383E-39" />
+      <entry key="S30" value="1.694546250131561E-13" />
+      <entry key="S60" value="5.235559371665263E-7" />
+      <entry key="M2" value="0.0011168670601470361" />
+      <entry key="M5" value="0.16460114902516976" />
+      <entry key="M10" value="1.2674625507712196" />
+      <entry key="M15" value="2.8471869363477365" />
+      <entry key="M30" value="7.006329164624425" />
+      <entry key="H1" value="11.399497554953241" />
+      <entry key="H2" value="14.673469012986812" />
+      <entry key="H4" value="16.684963168367773" />
+      <entry key="D1" value="18.591099613600807" />
+      <entry key="W1" value="18.940993031708594" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.9460576467255959" />
+      <entry key="MS500" value="0.9890059233091612" />
+      <entry key="S2" value="1.0741511141730238" />
+      <entry key="S5" value="1.3573306976103607" />
+      <entry key="S10" value="1.59814358277159" />
+      <entry key="S30" value="1.852146583565781" />
+      <entry key="S60" value="2.096490568298711" />
+      <entry key="M2" value="2.844209736574481" />
+      <entry key="M5" value="5.0526009454214025" />
+      <entry key="M10" value="8.639595723099186" />
+      <entry key="M15" value="12.365059460672049" />
+      <entry key="M30" value="21.393514848134842" />
+      <entry key="H1" value="30.756222820924393" />
+      <entry key="H2" value="37.73858289974104" />
+      <entry key="H4" value="42.038951004705936" />
+      <entry key="D1" value="46.122793472172994" />
+      <entry key="W1" value="46.8733880907192" />
+    </decayedShown>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3JTKnv1BxENsydUwl9FoV6WPAUj" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Act-1&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.jshint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.jshint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/ferna/Documents/Clase Admin de Archivos/IntelliJ Codes/Practica_01/src/Main.java&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-a203e0a19954-intellij.indexing.shared.core-IU-262.10315.125" />
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-IU-262.10315.125" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b3ab04b4-ac15-4614-acd0-21b475d895cb" name="Changes" comment="" />
+      <created>1789679791279</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1789679791279</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Practica_01" />
+    <MESSAGE value="Practica01" />
+    <MESSAGE value="Practica02" />
+    <option name="LAST_COMMIT_MESSAGE" value="Practica02" />
+  </component>
+</project>
